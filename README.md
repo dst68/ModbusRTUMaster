@@ -108,15 +108,15 @@ Optionally sets a driver enable pin. This pin will go `HIGH` when the library is
 
 ### Parameters
 - `serial`: the `Stream` object to use for Modbus communication. Usually something like `Serial1`.
-- `dePin`: the driver enable pin. This pin is set HIGH when transmitting. If this parameter is set to `-1`, this feature will be disabled. The default value is `-1`. Allowed data types are `int8_t` or `char`.
-- `rePin`: works exacly the same way as `dePin`. This option is included for compatibility with RS-485 shields like the [Arduino MKR 485 Shield](https://store.arduino.cc/products/arduino-mkr-485-shield).
+- `dePin`: the driver enable pin. This pin is set HIGH when transmitting. If this parameter is set to `-1`, this feature will be disabled. The default value is `-1`. Allowed data types: `int`.
+- `rePin`: the read enable pin. This pin is always set `LOW`. If this parameter is set to `-1`, this feature will be disabled. The default value is `-1`. Allowed data types: `int`.
 
 ### Example
 ``` C++
 # include <ModbusRTUMaster.h>
 
-const int8_t dePin = A6;
-const int8_t rePin = A5;
+const int dePin = A6;
+const int rePin = A5;
 
 ModbusRTUMaster modbus(Serial1, dePin, rePin);
 ```

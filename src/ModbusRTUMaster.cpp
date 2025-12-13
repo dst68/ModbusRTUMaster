@@ -1,6 +1,6 @@
 #include "ModbusRTUMaster.h"
 
-ModbusRTUMaster::ModbusRTUMaster(Stream& serial, int8_t dePin, int8_t rePin) : _rtuComm(serial, dePin, rePin) {
+ModbusRTUMaster::ModbusRTUMaster(Stream& serial, int dePin, int rePin) : _rtuComm(serial, dePin, rePin) {
   _rtuComm.setTimeout(500);
 }
 

@@ -26,7 +26,7 @@ enum ModbusRTUMasterError : uint8_t {
 
 class ModbusRTUMaster {
   public:
-    ModbusRTUMaster(Stream& serial, int8_t dePin = -1, int8_t rePin = -1);
+    ModbusRTUMaster(Stream& serial, int dePin = -1, int rePin = -1);
     void setTimeout(unsigned long timeout);
     void begin(unsigned long baud, uint32_t config = SERIAL_8N1);
 
